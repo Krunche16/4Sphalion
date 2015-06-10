@@ -9,6 +9,7 @@ class App{
 	}
 	
 	public function run(){
-		var_dump(REQUEST);
+		$controller = Router::getController();
+		$controller->run();
 	}
 }

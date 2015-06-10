@@ -7,7 +7,10 @@ class Autoloader{
 	}
 	
 	private static function load($class){
-		var_dump($class);
-		require $class . '.class.php';
+		if(strpos($class, 'App\\') === 0){
+			$class = str_replace('App\\', '', $class);
+			require $class . '.class.php';
+		}
+		
 	}
 }
