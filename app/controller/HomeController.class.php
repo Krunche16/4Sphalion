@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use \App\Database;
+use \App\Database\Database;
 
 class HomeController{
 	public function run(){
@@ -10,6 +10,7 @@ class HomeController{
 	}
 	
 	private function description(){
-		$db = Database::getInstance();
+		$q = Database::getInstance('Home')->getDb();
+			var_dump($q);
 	}
 }

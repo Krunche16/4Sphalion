@@ -6,7 +6,11 @@ class Router{
 	public static function getController(){
 		
 		switch (REQUEST) {
-			case 'Home':
+			case '' :
+				return new HomeController();
+				break;
+				
+			case 'Home' :
 				return new HomeController();
 				break;
 			

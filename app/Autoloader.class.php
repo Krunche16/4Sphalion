@@ -8,8 +8,11 @@ class Autoloader{
 	
 	private static function load($class){
 		if(strpos($class, 'App\\') === 0){
+			
 			$class = str_replace('App\\', '', $class);
+			$class = str_replace('\\', '/', $class);
 			require $class . '.class.php';
+			
 		}
 		
 	}
