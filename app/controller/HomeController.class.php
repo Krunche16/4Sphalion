@@ -6,11 +6,16 @@ class HomeController{
 	public function run(){
 		if(isset($_SESSION['user'])){
 			
-		}else{$this->description();}
+		}else{$this->getdescription();}
 	}
 	
-	private function description(){
-		$q = Database::getInstance('Home')->getDb();
-			var_dump($q);
+	private function getDescription(){
+		$q = Database::getInstance('Home')->getDescription();
+		echo $q;
+	}
+	
+	private function setDescription(){
+		$q = Database::getInstance('Home')->setDescription();
+		var_dump($q);
 	}
 }

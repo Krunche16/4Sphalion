@@ -27,16 +27,11 @@ class Database{
 	}
 	
 	final public static function getInstance($database){
-		if(static::$_instance === null){
+		if(self::$_instance === null){
 			$class = 'App\Database\\' . ucfirst($database) . 'Database';
 			
-			static::$_instance = new $class();
+			self::$_instance = new $class();
 		}
-		return static::$_instance;
+		return self::$_instance;
 	}
-	
-	public function getDb(){
-		return $this->db;
-	}
-	
 }

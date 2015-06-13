@@ -15,7 +15,14 @@ class HomeDatabase extends Database{
 		parent::__construct();
 	}
 	
-	public function getDb(){
-		return $this->db;
+	public function getDescription(){
+		$xml = new \SimpleXMLElement(ROOT . '/xml/description.xml', 0, true);
+		return $xml->desc;
+	}
+	
+	public function setDescription(){
+		$xml = new \SimpleXMLElement(ROOT . '/xml/description.xml', 0, true);
+		$xml->desc = 'Salut tout le monde !';
+		$xml->asXML(ROOT . '/xml/description.xml');
 	}
 }
