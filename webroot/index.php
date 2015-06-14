@@ -1,7 +1,7 @@
 <?php
 use App\App;
 define('ROOT', dirname(__DIR__));
-define('REQUEST', trim($_SERVER['REQUEST_URI'], dirname(dirname($_SERVER['SCRIPT_NAME']))));
+define('REQUEST', str_replace(dirname(dirname($_SERVER['SCRIPT_NAME'])), '', $_SERVER['REQUEST_URI']));
 
 require ROOT . '/app/App.class.php';
 
