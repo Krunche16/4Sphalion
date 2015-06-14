@@ -1,0 +1,10 @@
+section #contentSlide #nav.navOpened{
+	position: absolute;
+		right: 0%;
+		
+	transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+	-ms-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+}

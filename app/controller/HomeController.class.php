@@ -2,7 +2,10 @@
 namespace App\Controller;
 use \App\Database\Database;
 
-class HomeController{
+class HomeController extends Controller{
+	const TEMPLATE = 'default';
+	const TITLE = 'Home';
+	
 	public function run(){
 		if(isset($_SESSION['user'])){
 			
@@ -11,11 +14,13 @@ class HomeController{
 	
 	private function getDescription(){
 		$q = Database::getInstance('Home')->getDescription();
-		echo $q;
+		$q = '<article>' . $q . '</article>';
+		$this->render(self::TEMPLATE, self::TITLE, $q);
 	}
 	
 	private function setDescription(){
 		$q = Database::getInstance('Home')->setDescription();
-		var_dump($q);
+		
+		$this->render(self::TEMPLATE, slef::TITLE);
 	}
 }
