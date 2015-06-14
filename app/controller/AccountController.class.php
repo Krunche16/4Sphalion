@@ -7,6 +7,9 @@ class AccountController extends Controller{
 	const TITLE = 'Mon Compte';
 	
 	public function run(){
+		if(isset($_SESSION['user'])){
+			echo 'salut';
+		}else{ header('Location: Home');}
 	}
 	
 }

@@ -8,8 +8,11 @@ class HomeController extends Controller{
 	
 	public function run(){
 		if(isset($_SESSION['user'])){
-			
-		}else{$this->getdescription();}
+			if(isset($_POST['description'])){
+				$this->setDescription($_POST['description']);
+			}
+		}
+		$this->getDescription();
 	}
 	
 	private function getDescription(){

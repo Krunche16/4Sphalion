@@ -14,23 +14,35 @@
 		<header>
 			<div id='title'><h1>4Sphalion</h1></div>
 			<div id='icon'><img alt='icon' src='img/icon.png'></div>
-			<div class='right' id='hamburger'><span></span></div>
+			
+			<?php if(isset($_SESSION['user'])){
+				?>
+				<div id='hamburger'><span></span></div>
+				<?php
+			}else{
+				?>
+				<div id='connexion'>Connexion</div>
+				<?php				
+			} ?>
 		</header>
 		
 		<section>
 			<?= $content ?>
 	
-			<div id='contentSlide'>
-				<nav id='nav'>
-					<ul>
-						<a href='Home'><li class='categorie home'><span class='icon'></span>Home</li></a>
-						<a href='MonCompte'><li class='categorie account'><span class='icon'></span>Mon compte</li></a>
-						<a href='Strategies'><li class='categorie strategie'><span class='icon'></span>Stratégies</li></a>
-						<a href='Discution'><li class='categorie discution'><span class='icon'></span>Discution</li></a>
-					</ul>
-				</nav>
-			</div>
-			
+			<?php if(isset($_SESSION['user'])){
+				?>
+				<div id='contentSlide'>
+					<nav id='nav'>
+						<ul>
+							<a href='Home'><li class='categorie home'><span class='icon'></span>Home</li></a>
+							<a href='MonCompte'><li class='categorie account'><span class='icon'></span>Mon compte</li></a>
+							<a href='Strategies'><li class='categorie strategie'><span class='icon'></span>Stratégies</li></a>
+							<a href='Discution'><li class='categorie discution'><span class='icon'></span>Discution</li></a>
+						</ul>
+					</nav>
+				</div>
+				<?php 
+			} ?>
 		</section>
 			<script>
 				var hamburger = document.getElementById('hamburger');
