@@ -16,34 +16,31 @@
 			<div id='icon'><img alt='icon' src='img/icon.png'></div>
 			
 			<?= $status ?>
-			<!-- <?php if(isset($_SESSION['user'])){
-				?>
-				<div id='hamburger'><span></span></div>
-				<?php
-			}else{
-				?>
-				<div id='connexion'>Connexion</div>
-				<?php				
-			} ?> -->
 		</header>
 		
 		<section>
 			<?= $content ?>
 			<?= $nav ?>
 		</section>
-			<script>
-				var hamburger = document.getElementById('hamburger');
-				var nav = document.getElementById('nav');
-			
-				hamburger.addEventListener('click', function(){
-					if(this.className === 'hamburgerOpened'){
-						this.className = 'hamburgerClosed';
-						nav.className = 'navClosed';
-					}else{
-						this.className = 'hamburgerOpened';
-						nav.className = 'navOpened';
-					}
-				}, false);
-			</script>
+		<script src='js/popup.js'></script>
+		<script src='js/popupDOM.js'></script>
+		<script>
+			var hamburger = document.getElementById('hamburger');
+			var nav = document.getElementById('nav');
+		
+			hamburger.addEventListener('click', function(){
+				if(this.className === 'hamburgerOpened'){
+					this.className = 'hamburgerClosed';
+					nav.className = 'navClosed';
+				}else{
+					this.className = 'hamburgerOpened';
+					nav.className = 'navOpened';
+				}
+			}, false);
+		</script>
+		<script>
+			var popup = new Popup(popupDOM);
+				popup.addTrigger(document.getElementById('connexion'), 'click');
+		</script>
 	</body>
 </html>
