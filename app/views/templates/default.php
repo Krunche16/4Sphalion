@@ -40,7 +40,8 @@
 		</script>
 		<script>
 			var popup = new Popup(popupDOM);
-				popup.addTrigger(document.getElementById('connexion'), 'click');
+				popup.setTriggerAppear(document.getElementById('connexion'), 'click');
+				popup.setTriggerDisappear(document.body, 'click');
 		</script>
 	</body>
 </html>
