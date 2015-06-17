@@ -18,7 +18,7 @@ Popup.prototype.setTriggerAppear = function(trigger, event){
 			console.log(that.appear);
 		}
 		
-	}, true);
+	}, false);
 	
 }
 
@@ -33,9 +33,8 @@ Popup.prototype.setTriggerDisappear = function(trigger, event){
 			
 				document.body.removeChild(that.DOM);
 				that.appear = false;
-			
 			}
 			
-		}, true);	
+		}, false);	
 
 }

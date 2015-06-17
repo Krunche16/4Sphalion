@@ -277,3 +277,125 @@ section #contentSlide #nav ul li.categorie.discution span.icon::before{
 	content: url('../img/discution.png');
 
 }
+
+body .popupVeil{
+	position: absolute;	
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	
+	background: rgba(255, 255, 255, 0.3);
+}
+
+body .popupVeil .popupContent{
+	position: absolute;
+		top: 50%;
+		bottom: 50%;
+		left: 50%;
+		right: 50%;
+		
+	transform: translateY(-50%) translateX(-50%);
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	-o-transform: translateY(-50%) translateX(-50%);
+	-ms-transform: translateY(-50%) translateX(-50%);
+	-moz-transform: translateY(-50%) translateX(-50%); 
+	
+	height: 220px;
+	width: 30%;
+
+	padding: 30px;
+	background: #2e3335;
+	
+	box-shadow: 0 0 25px;
+}
+
+body .popupVeil .popupContent #popupExit{
+	position: absolute;
+		top: 0;
+		right: 0;
+		
+	height: 40px;
+	width: 40px;
+	
+	background: #a43d3d;
+	cursor: pointer;
+}
+
+body .popupVeil .popupContent #popupExit:hover{
+	background: #7e2f2f;
+}
+
+body .popupVeil .popupContent span{
+	display: block;
+	position: absolute;
+		top: 50%;
+		left: 50%;
+	
+	transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	
+	width: 90%;
+	height: 10%;
+	
+	background: white;
+}
+
+body .popupVeil .popupContent span.exit1{
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+body .popupVeil .popupContent span.exit2{
+	transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	-o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+
+body .popupVeil .popupContent form input, body .popupVeil .popupContent form label[for='submit']{
+	display: block;
+	
+	height: 30px;
+	width: 80%;
+	
+	padding: 5px;
+	margin: auto;
+	margin: 30px auto 30px auto;
+	
+	background: #4b5457;
+	border-radius: 10px 10px;
+	border: none;
+	
+	text-align: center;
+	color: white;
+}
+
+body .popupVeil .popupContent form input:focus{
+	outline: none;
+}
+
+body .popupVeil .popupContent form input[type='submit']{
+	display: none;
+}
+
+body .popupVeil .popupContent form label[for='submit']{
+	width: 20%;
+	height: 10%;
+	
+	border-radius: 0;
+	
+	background: #458345;
+	cursor: pointer;
+}
+
+body .popupVeil .popupContent form label[for='submit']:hover{
+	background: #315c31;
+}
