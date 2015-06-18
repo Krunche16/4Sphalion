@@ -278,6 +278,20 @@ section #contentSlide #nav ul li.categorie.discution span.icon::before{
 
 }
 
+section #contentSlide #nav ul li.categorie.logout span.icon::before{
+	content: url('../img/cross.png');
+
+}
+
+
+section #contentSlide #nav ul a[href='Logout'] li:hover{
+	background: #a41f1f;
+}
+
+section #contentSlide #nav ul a[href='Logout'] li{
+	background: #a43d3d;
+}
+
 body .popupVeil{
 	position: absolute;	
 		top: 0;
