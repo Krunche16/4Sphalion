@@ -25,4 +25,8 @@ class HomeDatabase extends Database{
 		$xml->desc = 'Salut tout le monde !';
 		$xml->asXML(ROOT . '/xml/description.xml');
 	}
+	
+	public function connect($username, $userpass){
+		Database::getInstance('User')->connect($username, $userpass);
+	}
 }

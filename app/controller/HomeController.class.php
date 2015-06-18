@@ -10,6 +10,10 @@ class HomeController extends Controller{
 	const STATUS_DISCO = 'connexion.html';
 	
 	public function run(){
+		if(isset($_POST['username']) && isset($_POST['userpass'])){
+				$this->connect($_POST['username'], $_POST['userpass']);
+		}
+		
 		if(isset($_SESSION['user'])){
 			if(isset($_POST['description'])){
 				$this->setDescription($_POST['description']);
@@ -31,5 +35,9 @@ class HomeController extends Controller{
 	
 	private function setDescription(){
 		$q = Database::getInstance('Home')->setDescription();
+	}
+	
+	private function connect($username, $userpass){
+		Database::getInstance('Home')->connect($username, $userpass);
 	}
 }

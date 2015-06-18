@@ -6,6 +6,6 @@ class ErreurController extends Controller{
 	const TITLE = 'Erreur';
 	
 	public function run(){
-		echo 'Erreur';
+		echo 'Bonjour tout le monde moi c\'est "Page d\'erreur" !';
 	}
 }

@@ -10,8 +10,6 @@ class Database{
 	
 	protected $db;
 	
-	protected static $_instance;
-	
 	protected function __construct(){
 		$dbData = require ROOT . '/config/config.conf';
 			$this->dbHost = $dbData['dbHost'];
@@ -27,11 +25,7 @@ class Database{
 	}
 	
 	final public static function getInstance($database){
-		if(self::$_instance === null){
-			$class = 'App\Database\\' . ucfirst($database) . 'Database';
-			
-			self::$_instance = new $class();
-		}
-		return self::$_instance;
+		$class = 'App\Database\\' . ucfirst($database) . 'Database';
+		return new $class();
 	}
 }

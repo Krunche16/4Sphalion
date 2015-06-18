@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset='utf-8'/>
-		<meta name='viewport' content='width=device-width' />
+		<meta name='viewport' content='width=device-width'/>
 		<link rel='stylesheet' type='text/css' href='css/style.css'/>
 		<link rel='stylesheet' type='text/css' href='css/hamburgerOpened.css'/>
 		<link rel='stylesheet' type='text/css' href='css/navOpened.css'/>
@@ -41,7 +41,7 @@
 		<script>
 			var popup = new Popup(popupDOM);
 				popup.setTriggerAppear(document.getElementById('connexion'), 'click');
-				popup.setTriggerDisappear(document.body, 'click');
+				popup.setTriggerDisappear(popupExit, 'click');
 		</script>
 	</body>
 </html>
