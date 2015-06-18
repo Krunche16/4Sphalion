@@ -5,6 +5,7 @@ use App\Controller\AccountController;
 use App\Controller\StrategiesController;
 use App\Controller\DiscutionController;
 use App\Controller\ErreurController;
+use App\Controller\LogoutController;
 
 class Router{
 	public static function getController(){
@@ -27,6 +28,10 @@ class Router{
 				
 			case '/Discution' : 
 				return new DiscutionController();
+				break;
+				
+			case '/Logout' :
+				return new LogoutController();
 				break;
 			
 			default:
