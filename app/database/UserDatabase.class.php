@@ -12,7 +12,7 @@ class UserDatabase extends Database{
 		$user = $q->fetchAll(\PDO::FETCH_OBJ);
 		
 		if(!empty($user)){
-			$_SESSION['user'] = $user;
+			$_SESSION['user'] = new \App\User($user[0]);
 		}
 	}
 }
