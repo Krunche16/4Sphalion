@@ -10,8 +10,8 @@ class AccountController extends Controller{
 	
 	public function run(){
 		if(isset($_SESSION['user'])){
-			
-			$this->render(self::TEMPLATE, self::TITLE, '', self::STATUS_CO, self::NAV);
+
+			$this->render(self::TEMPLATE, self::TITLE, $_SESSION['user']->getUsername(), self::STATUS_CO, self::NAV);
 		
 		}else{ header('Location: Home');}
 	}

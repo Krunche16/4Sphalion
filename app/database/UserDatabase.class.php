@@ -1,5 +1,6 @@
 <?php
 namespace App\Database;
+use App\User;
 
 class UserDatabase extends Database{
 	public function __construct(){
@@ -12,7 +13,7 @@ class UserDatabase extends Database{
 		$user = $q->fetchAll(\PDO::FETCH_OBJ);
 		
 		if(!empty($user)){
-			$_SESSION['user'] = new \App\User($user[0]);
+			$_SESSION['user'] = new User($user[0]);
 		}
 	}
 }
