@@ -14,6 +14,8 @@ class UserDatabase extends Database{
 		
 		if(!empty($user)){
 			$_SESSION['user'] = new User($user[0]);
+		}else{
+			header('HTTP/1.0 403');
 		}
 	}
 }
