@@ -1,5 +1,5 @@
 <?php
-namespace App\Database;
+namespace Sphalion\App\Database;
 
 class HomeDatabase extends Database{
 	protected $dbName;

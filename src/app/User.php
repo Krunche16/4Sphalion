@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace Sphalion\App;
 
 class User{
 	private $id;

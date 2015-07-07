@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace Sphalion\App\Controller;
 
 class Controller{
 	public function render($template, $title, $content = '', $status = '', $nav = ''){

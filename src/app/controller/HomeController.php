@@ -1,6 +1,6 @@
 <?php
-namespace App\Controller;
-use \App\Database\Database;
+namespace Sphalion\App\Controller;
+use \Sphalion\App\Database\Database;
 
 class HomeController extends Controller{
 	const TEMPLATE = 'default';

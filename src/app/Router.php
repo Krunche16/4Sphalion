@@ -1,11 +1,11 @@
 <?php
-namespace App;
-use App\Controller\HomeController;
-use App\Controller\AccountController;
-use App\Controller\StrategiesController;
-use App\Controller\DiscutionController;
-use App\Controller\ErreurController;
-use App\Controller\LogoutController;
+namespace Sphalion\App;
+use Sphalion\App\Controller\HomeController;
+use Sphalion\App\Controller\AccountController;
+use Sphalion\App\Controller\StrategiesController;
+use Sphalion\App\Controller\DiscutionController;
+use Sphalion\App\Controller\ErreurController;
+use Sphalion\App\Controller\LogoutController;
 
 class Router{
 	public static function getController(){

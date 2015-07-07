@@ -1,11 +1,8 @@
 <?php
-namespace App;
+namespace Sphalion\App;
 
 class App{
 	public function init(){
-		require 'Autoloader.php';
-			Autoloader::spl();
-			
 		session_start();
 	}
 	

@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace Sphalion\App\Controller;
 
 class StrategiesController extends Controller{
 	const TEMPLATE = 'default';

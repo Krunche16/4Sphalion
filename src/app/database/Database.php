@@ -1,6 +1,6 @@
 <?php
-namespace App\Database;
-use \App\Database\HomeDatabase;
+namespace Sphalion\App\Database;
+use \Sphalion\App\Database\HomeDatabase;
 
 class Database{
 	protected $dbName;
@@ -25,7 +25,7 @@ class Database{
 	}
 	
 	final public static function getInstance($database){
-		$class = 'App\Database\\' . ucfirst($database) . 'Database';
+		$class = 'Sphalion\App\Database\\' . ucfirst($database) . 'Database';
 		return new $class();
 	}
 }
