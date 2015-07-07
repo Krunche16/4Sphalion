@@ -3,7 +3,7 @@ namespace App;
 
 class App{
 	public function init(){
-		require 'Autoloader.class.php';
+		require 'Autoloader.php';
 			Autoloader::spl();
 			
 		session_start();

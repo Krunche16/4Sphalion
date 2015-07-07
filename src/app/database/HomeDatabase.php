@@ -16,14 +16,17 @@ class HomeDatabase extends Database{
 	}
 	
 	public function getDescription(){
-		$xml = new \SimpleXMLElement(ROOT . '/xml/description.xml', 0, true);
-		return $xml->desc;
+		$file = fopen(ROOT. '/src/app/views/description.desc', 'r');
+			$desc = fgets($file);
+		fclose($file);
+		
+		return $desc;
 	}
 	
 	public function setDescription(){
-		$xml = new \SimpleXMLElement(ROOT . '/xml/description.xml', 0, true);
-		$xml->desc = 'Salut tout le monde !';
-		$xml->asXML(ROOT . '/xml/description.xml');
+		$file = fopen(ROOT. '/src/app/views/description.desc', 'a');
+			fputs($file, 'Salut tout le monde !');
+		fclose($file);
 	}
 	
 	public function connect($username, $userpass){

@@ -11,7 +11,7 @@ class Autoloader{
 			
 			$class = str_replace('App\\', '', $class);
 			$class = str_replace('\\', '/', $class);
-			require $class . '.class.php';
+			require $class . '.php';
 			
 		}
 		

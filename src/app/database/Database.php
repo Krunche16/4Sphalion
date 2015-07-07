@@ -11,7 +11,7 @@ class Database{
 	protected $db;
 	
 	protected function __construct(){
-		$dbData = require ROOT . '/config/config.conf';
+		$dbData = require ROOT . '/src/config/config.conf';
 			$this->dbHost = $dbData['dbHost'];
 			$this->dbName = $dbData['dbName'];
 			$this->dbPassword = $dbData['dbPassword'];
