@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace Sphalion\App\Controller;
 
 class AccountController extends Controller{
 	

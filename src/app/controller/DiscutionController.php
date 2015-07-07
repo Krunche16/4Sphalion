@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace Sphalion\App\Controller;
 
 class DiscutionController extends Controller{
 	const TEMPLATE = 'default';

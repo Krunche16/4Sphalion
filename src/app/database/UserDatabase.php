@@ -1,6 +1,6 @@
 <?php
-namespace App\Database;
-use App\User;
+namespace Sphalion\App\Database;
+use Sphalion\App\User;
 
 class UserDatabase extends Database{
 	public function __construct(){
