@@ -7,7 +7,9 @@ class User{
 	private $userpass;
 	private $status;
 	
-	public function __construct($data){
+	public function __construct($data = ['id' => 0, 'username' => '', 'userpass' => '', 'status' => 0]){
+		$data = (object) $data;
+		
 		$this->id = (int) $data->id;
 		$this->username = $data->username;
 		$this->userpass = $data->userpass;
@@ -27,6 +29,16 @@ class User{
 	}
 	
 	public function getStatus(){
-		return $this->status;
+		if($this->status === 0){
+			return 'userDisconnected';
+		}
+		
+		if($this->status === 1){
+			return 'user';
+		}
+		
+		if($this->status === 2){
+			return 'admin';
+		}
 	}
 }
