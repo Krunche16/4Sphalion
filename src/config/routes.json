@@ -1,0 +1,157 @@
+[
+	{
+		"path": "/",
+		
+		"access": [
+			{
+				"status": "userDisconnected",
+				"method": "GET",
+				"action": ["HomeController::redirect"]
+			},
+			
+			{
+				"status": "user",
+				"method": "GET",
+				"action": ["HomeController::redirect"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "GET",
+				"action": ["HomeController::redirect"]
+			}
+		]
+	},
+	
+	{
+		"path": "/Home",
+		
+		"access": [
+			{
+				"status": "userDisconnected",
+				"method": "GET",
+				"action": ["HomeController::index"]			
+			},
+			
+			{
+				"status": "userDisconnected",
+				"method": "POST",
+				"action": ["HomeController::connect", "HomeController::index"]
+			},
+			
+			{
+				"status": "user",
+				"method": "GET",
+				"action": ["HomeController::index"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "GET",
+				"action": ["HomeController::index"]
+			}
+		]
+	},
+	
+	{
+		"path": "/MonCompte",
+		
+		"access": [
+			{
+				"status": "user",
+				"method": "GET",
+				"action": ["AccountController::index"]
+			},
+			
+			{
+				"status": "user",
+				"method": "POST",
+				"action": ["AccountController::update", "AccountController::index"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "GET",
+				"action": ["AccountController::index"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "POST",
+				"action": ["AccountController::update", "AccountController::index"]
+			}
+		]
+	},
+	
+	{
+		"path": "/Strategies",
+		
+		"access": [
+			{
+				"status": "user",
+				"method": "GET",
+				"action": ["StrategiesController::index"]	
+			},
+		
+			{
+				"status": "admin",
+				"method": "GET",
+				"action": ["StrategiesController::index"]
+			}
+		]
+	},
+	
+	{
+		"path": "/Discution",
+		
+		"access": [
+			{
+				"status": "user",
+				"method": "GET",
+				"action": ["DiscutionController::index"]
+			},
+			
+			{
+				"status": "user",
+				"method": "POST",
+				"action": ["DiscutionController::addDiscution", "DiscutionController::index"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "GET",
+				"action": ["DiscutionController::index"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "POST",
+				"action": ["DiscutionController::addDiscution", "DiscutionController::index"]
+			}
+		]
+	},
+	
+	{
+		"path": "/Logout",
+		
+		"access": [
+			{
+				"status": "userDisconnected",
+				"method": "GET",
+				"action": ["LogoutController::index"]
+			},
+			
+			{
+				"status": "user",
+				"method": "GET",
+				"action": ["LogoutController::index"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "GET",
+				"action": ["LogoutController::index"]
+			}
+		]
+	}
+]
