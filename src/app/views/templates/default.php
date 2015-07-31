@@ -3,6 +3,7 @@
 	<head>
 		<meta charset='utf-8'/>
 		<meta name='viewport' content='width=device-width'/>
+		<base href='/4Sphalion/'/>
 		<link rel='stylesheet' type='text/css' href='src/css/style.css'/>
 		<link rel='stylesheet' type='text/css' href='src/css/hamburgerOpened.css'/>
 		<link rel='stylesheet' type='text/css' href='src/css/navOpened.css'/>
