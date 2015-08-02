@@ -16,12 +16,35 @@
 			<div id='title'><h1>4Sphalion</h1></div>
 			<div id='icon'><img alt='icon' src='src/img/icon.png'></div>
 			
-			<?= $status ?>
+			<?php
+			if($_SESSION['user']->getStatus() === 'userDisconnected'){
+			?>	<div id='connexion'><a href='#'>Connexion</a></div> <?php	
+			}else{
+			?> <div id='hamburger'><span></span></div> <?php
+			}
+			?>
+			
 		</header>
 		
 		<section>
-			<?= $content ?>
-			<?= $nav ?>
+		<?= $content ?>
+		<?php 
+		if($_SESSION['user']->getStatus() !== 'userDisconnected'){
+		?>
+		<div id='contentSlide'>
+			<nav id='nav'>
+				<ul>
+					<a href='Home'><li class='categorie home'><span class='icon'></span>Home</li></a>
+					<a href='MonCompte'><li class='categorie account'><span class='icon'></span>Mon compte</li></a>
+					<a href='Strategies'><li class='categorie strategie'><span class='icon'></span>Stratégies</li></a>
+					<a href='Discution'><li class='categorie discution'><span class='icon'></span>Discution</li></a>
+					<a href='Logout'><li class='categorie logout'><span class='icon'></span>Déconnexion</li></a>
+				</ul>
+			</nav>
+		</div> 
+		<?php	
+		}
+		?>
 		</section>
 		<script src='src/js/popup.js'></script>
 		<script src='src/js/popupDOM.js'></script>
