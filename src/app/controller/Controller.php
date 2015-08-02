@@ -14,9 +14,9 @@ class Controller{
 		}
 		
 		if(strpos(REQUEST, '/', 1) && substr(REQUEST, strpos(REQUEST, '/', 1)+1)){
-			$this->args = substr(REQUEST, strpos(REQUEST, '/', 1), strlen(REQUEST));
-			$this->args = trim($this->args, '/');
-			$this->args = explode('/', $this->args);
+			$this->args['GET'] = substr(REQUEST, strpos(REQUEST, '/', 1), strlen(REQUEST));
+			$this->args['GET'] = trim($this->args['GET'], '/');
+			$this->args['GET'] = explode('/', $this->args['GET']);
 		}else{
 			$this->args['GET'] = null;
 		}
