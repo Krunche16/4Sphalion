@@ -22,19 +22,7 @@ class Controller{
 		}
 	}
 	
-	protected function render($template, $title, $content = '', $status = '', $nav = ''){
-		if($status !== ''){
-			ob_start();
-				include ROOT . '/src/app/views/templates/items/' . $status;
-			$status = ob_get_clean();
-		}
-		
-		if($nav !== ''){
-			ob_start();
-			include ROOT . '/src/app/views/templates/items/' . $nav;
-			$nav = ob_get_clean();
-		}
-		
+	protected function render($template, $title, $content = ''){
 		require ROOT . '/src/app/views/templates/' . $template . '.php';
 	}
 }
