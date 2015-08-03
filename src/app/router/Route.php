@@ -5,7 +5,7 @@ class Route{
 	private $action = [];
 	
 	public function __construct(array $action = array()){
-		$this->action = (empty($action)) ? ["ErreurController::index"] : $action;
+		$this->action = (empty($action)) ? "ErreurController::index" : $action;
 	}
 	
 	public function run(){
@@ -15,7 +15,10 @@ class Route{
 			
 			$do = $this->getAction($i);
 
-			$controller->$do();
+			if($controller->$do() === false){
+				$controller = new \Sphalion\App\Controller\ErreurController;
+				$controller->index();
+			}
 		}
 	}
 	
