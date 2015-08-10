@@ -1,8 +1,11 @@
 <?php
-namespace Sphalion\App\Database;
+namespace Sphalion\App\Model;
 use Sphalion\App\User;
 
-class UserDatabase extends Database{
+class UserDatabase extends Origin\Database{
+	
+	protected $table = 'users';
+	
 	public function __construct(){
 		parent::__construct();
 	}

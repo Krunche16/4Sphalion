@@ -1,8 +1,9 @@
 <?php
-namespace Sphalion\App\Database;
-use \Sphalion\App\Database\HomeDatabase;
+namespace Sphalion\App\Model\Origin;
 
-class Database{
+abstract class Database{
+	protected $table;
+	
 	protected $dbName;
 	protected $dbHost;
 	protected $dbPassword;
@@ -24,8 +25,8 @@ class Database{
 		}
 	}
 	
-	final public static function getInstance($database){
-		$class = 'Sphalion\App\Database\\' . ucfirst($database) . 'Database';
-		return new $class();
+	public function getAllTable(){
+		$q = $this->db->query('SELECT * FROM '. $this->table);
+		return $q->fetchAll(\PDO::FETCH_OBJ);
 	}
 }
