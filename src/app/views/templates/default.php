@@ -8,7 +8,7 @@
 		<link rel='stylesheet' type='text/css' href='src/css/hamburgerOpened.css'/>
 		<link rel='stylesheet' type='text/css' href='src/css/navOpened.css'/>
 		<link rel='shortcut icon' href='src/img/favico.ico'/>
-		<title>4Sphalion | <?= $title ?></title>
+		<title>4Sphalion | <?= $this->get('title') ?></title>
 	</head>
 	
 	<body>
@@ -27,7 +27,7 @@
 		</header>
 		
 		<section>
-		<?= $content ?>
+		<?= $this->get('content') ?>
 		<?php 
 		if($_SESSION['user']->getStatus() !== 'userDisconnected'){
 		?>
