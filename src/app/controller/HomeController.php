@@ -1,43 +1,50 @@
 <?php
 namespace Sphalion\App\Controller;
-use \Sphalion\App\Database\Database;
+use \Sphalion\App\Model\UserDatabase;
+use \Sphalion\App\Model\DescriptionFile;
 
 class HomeController extends Controller{
-	const TEMPLATE = 'default';
-	const TITLE = 'Home';
-	const NAV = 'nav.html';
-	const STATUS_CO = 'hamburger.html';
-	const STATUS_DISCO = 'connexion.html';
 	
-	public function run(){
-		if(isset($_POST['username']) && isset($_POST['userpass'])){
-				$this->connect($_POST['username'], $_POST['userpass']);
-		}
+	private $title;
+	private $template;
+	
+	public function __construct(){
+		parent::__construct();
 		
-		if(isset($_SESSION['user'])){
-			if(isset($_POST['description'])){
-				$this->setDescription($_POST['description']);
-			}
+		$this->title = 'Home';
+		$this->template = 'default';
+	}
+	
+	public function index(){
+		if($this->args['GET'] !== null){
+			return false;
+		}
+
+		if($_SESSION['user']->getStatus() === 'user' || $_SESSION['user']->getStatus() === 'admin'){
 			$q = $this->getDescription();
-			$this->render(self::TEMPLATE, self::TITLE, $q, self::STATUS_CO, self::NAV);
+			$this->render($this->template, ['title' => $this->title, 'content' => $q]);
 		}else{
 			$q = $this->getDescription();
-			$this->render(self::TEMPLATE, self::TITLE, $q, self::STATUS_DISCO);
+			$this->render($this->template, ['title' => $this->title, 'content' => $q]);
 		}
+	}
+	
+	public function connect(){
+		$username = $_POST['username'];
+		$userpass = $_POST['userpass'];
+		
+		$userDatabase = new UserDatabase;
+		$userDatabase->connect($username, $userpass);
+	}
+	public function redirect(){
+		header('Location: Home');
 	}
 	
 	private function getDescription(){
-		$q = Database::getInstance('Home')->getDescription();
-		$q = '<article>' . $q . '</article>';
+		$description = new DescriptionFile;
 		
+		$q = $description->getAllFile();
+		$q = '<article>'. $q .'</article>';
 		return $q;
-	}
-	
-	private function setDescription(){
-		$q = Database::getInstance('Home')->setDescription();
-	}
-	
-	private function connect($username, $userpass){
-		Database::getInstance('Home')->connect($username, $userpass);
 	}
 }
