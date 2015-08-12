@@ -3,6 +3,7 @@ namespace Sphalion\App\Controller;
 
 class Controller{
 	protected $args = [];
+	protected $render = [];
 	
 	public function __construct(){
 		if(!empty($_POST)){
@@ -22,7 +23,13 @@ class Controller{
 		}
 	}
 	
-	protected function render($template, $title, $content = ''){
+	protected function render($template, $render = []){
+		$this->render = $render;
 		require ROOT . '/src/app/views/templates/' . $template . '.php';
 	}
+	
+	protected function get($item){
+		return (isset($this->render[$item]))? $this->render[$item]
+										  : '';
+	} 
 }
