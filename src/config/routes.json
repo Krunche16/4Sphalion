@@ -46,8 +46,20 @@
 			},
 			
 			{
+				"status": "user",
+				"method": "POST",
+				"action": ["HomeController::index"]
+			},
+			
+			{
 				"status": "admin",
 				"method": "GET",
+				"action": ["HomeController::index"]
+			},
+			
+			{
+				"status": "admin",
+				"method": "POST",
 				"action": ["HomeController::index"]
 			}
 		]
