@@ -3,17 +3,11 @@ namespace Sphalion\App\Controller;
 
 class AccountController extends Controller{
 	
-	const TEMPLATE = 'default';
-	const TITLE = 'Mon Compte';
-	const STATUS_CO = 'hamburger.html';
-	const NAV = 'nav.html';
+	private $title = 'Mon Compte';
+	private $template = 'default';
 	
-	public function run(){
-		if(isset($_SESSION['user'])){
-
-			$this->render(self::TEMPLATE, self::TITLE, $_SESSION['user']->getUsername(), self::STATUS_CO, self::NAV);
-		
-		}else{ header('Location: Home');}
+	public function index(){
+		$this->render($this->template, ['title' => $this->title, 'content' => $_SESSION['user']->getUsername()]);
 	}
 	
 }
