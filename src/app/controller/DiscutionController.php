@@ -2,10 +2,10 @@
 namespace Sphalion\App\Controller;
 
 class DiscutionController extends Controller{
-	const TEMPLATE = 'default';
-	const TITLE = 'Discution';
+	private $template = 'default';
+	private $title = 'Discution';
 	
-	public function run(){
-		
+	public function index(){
+		$this->render($this->template, ['title' => $this->title]);
 	}
 }
