@@ -2,10 +2,10 @@
 namespace Sphalion\App\Controller;
 
 class StrategiesController extends Controller{
-	const TEMPLATE = 'default';
-	const TITLE = 'Strategegies';
+	private $template = 'default';
+	private $title = 'Stratégies';
 	
-	public function run(){
-		
+	public function index(){
+		$this->render($this->template, ['title' => $this->title]);
 	}
 }
