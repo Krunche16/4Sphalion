@@ -2,10 +2,10 @@
 namespace Sphalion\App\Controller;
 
 class ErreurController extends Controller{
-	const TEMPLATE = 'error';
-	const TITLE = 'Erreur';
+	private $template = 'default';
+	private $title = 'Erreur';
 	
-	public function run(){
-		echo 'Bonjour tout le monde moi c\'est "Page d\'erreur" !';
+	public function index(){
+		$this->render($this->template, ['title' => $this->title, 'content' => 'Je suis la page d\'erreur !']);
 	}
 }
