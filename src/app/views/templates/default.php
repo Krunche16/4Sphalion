@@ -28,6 +28,7 @@
 		
 		<section>
 		<?= $this->get('content') ?>
+		<?php if($this->get('underTemplate')){require 'underTemplates/' . $this->get('underTemplate') . '.html';} ?>
 		<?php 
 		if($_SESSION['user']->getStatus() !== 'userDisconnected'){
 		?>

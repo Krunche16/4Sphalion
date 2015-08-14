@@ -7,7 +7,7 @@ class AccountController extends Controller{
 	private $template = 'default';
 	
 	public function index(){
-		$this->render($this->template, ['title' => $this->title, 'content' => $_SESSION['user']->getUsername()]);
+		$this->render($this->template, ['title' => $this->title, 'underTemplate' => 'accountShow']);
 	}
 	
 }
