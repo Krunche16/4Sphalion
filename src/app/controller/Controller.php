@@ -30,6 +30,6 @@ class Controller{
 	
 	protected function get($item){
 		return (isset($this->render[$item]))? $this->render[$item]
-										  : false;
+											 : false;
 	} 
 }
