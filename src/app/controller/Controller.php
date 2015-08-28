@@ -4,6 +4,7 @@ namespace Sphalion\App\Controller;
 class Controller{
 	protected $args = [];
 	protected $render = [];
+	protected $underTemplate = [];
 	
 	public function __construct(){
 		if(!empty($_POST)){
@@ -23,13 +24,21 @@ class Controller{
 		}
 	}
 	
-	protected function render($template, $render = []){
+	protected function render($template, $render = [], $underTemplate = []){
 		$this->render = $render;
+		$this->underTemplate = $underTemplate;
+		
 		require ROOT . '/src/app/views/templates/' . $template . '.php';
 	}
 	
 	protected function get($item){
 		return (isset($this->render[$item]))? $this->render[$item]
 											 : false;
-	} 
+	}
+	
+	protected function template($item){
+		if(isset($this->underTemplate[$item])){
+			require ROOT . '/src/app/views/templates/underTemplates/' . $this->underTemplate[$item] . '.html';
+		}
+	}
 }

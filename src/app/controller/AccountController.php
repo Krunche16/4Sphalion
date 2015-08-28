@@ -7,7 +7,7 @@ class AccountController extends Controller{
 	private $template = 'default';
 	
 	public function index(){
-		$this->render($this->template, ['title' => $this->title, 'underTemplate' => 'accountShow']);
+		$this->render($this->template, ['title' => $this->title], ['underTemplate' => 'accountShow']);
 	}
 	
 }
