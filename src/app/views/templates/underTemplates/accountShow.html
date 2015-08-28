@@ -1,3 +1,9 @@
- <p>
- 	<strong><?= $_SESSION['user']->getUsername(); ?></strong>
- </p>
+<div class='navAccount'>
+	<img src='src/img/navAccount.png' alt='navAccount'>
+	<div class='navItems'>
+		<span id='itemLeft'><a href='MonCompte/Vue'>Vue</a></span>
+		<span id='itemRight'><a href='MonCompte/Edition'>Edition</a></span>
+	</div>
+</div>
+
+<?php $this->template('active'); ?>
